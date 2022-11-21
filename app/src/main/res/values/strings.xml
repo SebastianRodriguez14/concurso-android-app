@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">concurso-android</string>
+
+    <string name="splashcreen_title">CONCURSO DE ANDROID</string>
+    <string name="splashcreen_author">Sebastián Rodríguez Ventura</string>
+
+    <string name="prendas_title">Venta de Prendas</string>
+
+    <string name="prendas_register_title">Registro de Prenda</string>
+    <string name="prendas_register_nombre">Nombre de la Prenda</string>
+    <string name="prendas_register_precio">Precio ($)</string>
+    <string name="prendas_register_marca">Marca</string>
+    <string name="prendas_register_stock">Stock</string>
+    <string name="prendas_register_url_tienda">Url de la Tienda</string>
+    <string name="prendas_register_url_imagen">Url de la Imagen</string>
+    <string name="prendas_register_button_registrar">Registrar</string>
+    <string name="prendas_register_button_cancelar">Cancelar</string>
+
+
+
+</resources>

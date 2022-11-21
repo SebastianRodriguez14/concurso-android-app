@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorOnPrimary"
+    tools:context=".activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_container_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottom_navigation_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mbn_circleColor="@color/my_white"
+        app:mbn_backgroundBottomColor="?colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:mbn_defaultIconColor="@color/white"
+        app:mbn_selectedIconColor="?colorPrimary"
+        app:mbn_shadowColor="#1f212121"
+        android:background="?colorOnPrimary"
+        />
+
+<!--    Template for text view-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/inter_semibold"-->
+<!--        android:text="Template"-->
+<!--        android:textColor="?colorSecondary"-->
+<!--        android:textSize="28sp"/>-->
+
+<!--    Template for input-->
+<!--    <EditText-->
+<!--        android:id="@+id/exe01_input_codigo"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:textColor="?colorSecondary"-->
+<!--        android:paddingHorizontal="7dp"-->
+<!--        android:paddingVertical="2dp"-->
+<!--        android:textSize="15sp"-->
+<!--        android:lines="1"-->
+<!--        android:inputType="text"-->
+<!--        android:fontFamily="@font/inter_medium"-->
+<!--        android:background="@drawable/shape_input"-->
+<!--        />-->
+
+<!--    Template for button-->
+<!--    <Button-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        app:backgroundTint="@null"-->
+<!--        android:background="@drawable/shape_button"-->
+<!--        android:text="Template"-->
+<!--        android:textSize="17sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:fontFamily="@font/inter_bold"-->
+
+<!--        />-->
+
+<!--    Template for button outline-->
+<!--    <Button-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        app:backgroundTint="@null"-->
+<!--        android:background="@drawable/shape_button_outline"-->
+<!--        android:text="Template"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textSize="17sp"-->
+<!--        android:textColor="?colorPrimary"-->
+<!--        android:fontFamily="@font/inter_bold"-->
+<!--        android:lineSpacingExtra="1dp"-->
+<!--        />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
