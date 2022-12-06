@@ -26,13 +26,10 @@ class SplashscreenActivity : AppCompatActivity() {
         binding.splashscreenContainer.isVisible = false
         setContentView(binding.root)
 
-
-//        binding.splashscreenText.visibility = View.INVISIBLE
-
         var timerShowActivity = GlobalScope.launch {  }
 
         timerShowActivity = GlobalScope.launch(Dispatchers.Main) {
-            delay(5000)
+            delay(3000)
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
         animateContainer()
@@ -45,7 +42,7 @@ class SplashscreenActivity : AppCompatActivity() {
             delay(500)
             binding.splashscreenContainer.isVisible = true
             val objectAnimator = ObjectAnimator.ofFloat(binding.splashscreenContainer, View.ALPHA, 0.0f, 1.0f)
-            objectAnimator.setDuration(1000)
+            objectAnimator.setDuration(500)
             val animatorSet = AnimatorSet()
             animatorSet.play(objectAnimator)
             animatorSet.start()

@@ -29,7 +29,14 @@ class ForValidations {
         //Valida números con una cantidad de dígitos específica si así se quiere
         fun valNumber(text:String, numberOfDigits:Int = 0):Boolean{
             val regOnlyNumber:Regex = if (numberOfDigits == 0) Regex("^[0-9]+$") else Regex("^[0-9]{$numberOfDigits}$")
+            customMessage = "Este campo solo acepta números"
             return regOnlyNumber.containsMatchIn(text)
+        }
+
+        fun valDecimal(text:String):Boolean{
+            val regOnlyDecimal:Regex = Regex("^[0-9]+(\\.[0-9]+|\\.)?\$")
+            customMessage = "Este campo solo acepta decimales"
+            return regOnlyDecimal.containsMatchIn(text)
         }
 
         fun valEmptyText(text: String):Boolean{

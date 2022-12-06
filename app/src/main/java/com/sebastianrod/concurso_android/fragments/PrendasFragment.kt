@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.sebastianrod.concurso_android.R
 import com.sebastianrod.concurso_android.databinding.FragmentPrendasBinding
 import com.sebastianrod.concurso_android.fragments.adapter.PrendaAdapter
 import com.sebastianrod.concurso_android.model.Prenda
 import com.sebastianrod.concurso_android.retrofit.ApiService
 import com.sebastianrod.concurso_android.retrofit.RetrofitClient
+import com.sebastianrod.concurso_android.utils.ArrayForClass
 import com.sebastianrod.concurso_android.utils.ForFragments
 import retrofit2.Call
 import retrofit2.Callback
@@ -43,7 +46,13 @@ class PrendasFragment : Fragment() {
             ForFragments.replaceInFragment(PrendasRegisterFragment() ,fragmentManager)
         }
 
-
+        if (ArrayForClass.prendas == null){
+            binding.layoutLoaderPrendas.isVisible = true
+            binding.recyclerViewPrendas.isVisible = false
+            apiGetPrendas()
+        } else {
+            initPrendas(ArrayForClass.prendas!!)
+        }
 
         return binding.root
     }
@@ -51,6 +60,7 @@ class PrendasFragment : Fragment() {
     private fun initPrendas(prendas: List<Prenda>){
         binding.recyclerViewPrendas.adapter = PrendaAdapter(prendas)
     }
+
 
     private fun apiGetPrendas() {
 
@@ -63,16 +73,19 @@ class PrendasFragment : Fragment() {
                 val listPrendas = response.body()
 
                 if (listPrendas != null) {
-                    println(listPrendas)
+                    ArrayForClass.prendas = listPrendas.toMutableList()
                     initPrendas(listPrendas)
+                    binding.layoutLoaderPrendas.isVisible = false
+                    binding.recyclerViewPrendas.isVisible = true
                 }
             }
             override fun onFailure(call: Call<List<Prenda>>, t: Throwable) {
                 println("Error: getPrendas() failure")
-
+                apiGetPrendas()
             }
         })
 
     }
+
 
 }

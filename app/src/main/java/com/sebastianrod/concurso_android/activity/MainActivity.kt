@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityMainBinding
 
-    private val ID_HOME = 1
+    private val ID_PRENDAS = 1
 
 
 
@@ -23,13 +23,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        binding.bottomNavigationMain.add(MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_boton_de_inicio))
+        binding.bottomNavigationMain.add(MeowBottomNavigation.Model(ID_PRENDAS, R.drawable.ic_percha))
 
         binding.bottomNavigationMain.setOnClickMenuListener {
             when(it.id){
-                ID_HOME -> ForFragments.replaceFragment(supportFragmentManager, R.id.frame_container_main, PrendasFragment())
+                ID_PRENDAS -> ForFragments.replaceFragment(supportFragmentManager, R.id.frame_container_main, PrendasFragment())
             }
         }
 
+        binding.bottomNavigationMain.show(ID_PRENDAS)
+        ForFragments.replaceFragment(supportFragmentManager, R.id.frame_container_main, PrendasFragment())
+
     }
+
+
+
 }

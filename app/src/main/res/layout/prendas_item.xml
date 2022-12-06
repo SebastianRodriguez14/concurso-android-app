@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="120dp"
+    android:layout_width="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:paddingHorizontal="2dp"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="2dp"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/prenda_item_image"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:scaleType="centerCrop"/>
 
-    <TextView
-        android:id="@+id/prenda_item_price"
-        tools:text= "$ 130"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_medium"
-        android:textColor="?colorSecondary"
-        android:textSize="16dp"
-        android:gravity="center"
-        android:textAlignment="center"
-        />
+            <ImageView
+                android:id="@+id/prenda_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                tools:src="@drawable/prenda_image_default"
+                android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/prenda_item_price"
+                tools:text= "$ 130"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="?colorSecondary"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                />
+
 
 
 </LinearLayout>

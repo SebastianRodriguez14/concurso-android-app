@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ImageDialogFragment"
+    app:cardCornerRadius="20dp"
+    android:background="@drawable/shape_image_modal"
+    android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image_dialog"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            tools:src="@drawable/prenda_image_default"
+            android:scaleType="centerCrop"   />
+
+
+</androidx.cardview.widget.CardView>
